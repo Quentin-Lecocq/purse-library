@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Purse Library</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { createGallery } from '../dist/purse-library.es.js';
+
+      const gallery = createGallery({
+        container: '#app',
+      });
+
+      gallery.displayPhotos([
+        { url: 'https://picsum.photos/200/300' },
+        { url: 'https://picsum.photos/200/300' },
+        { url: 'https://picsum.photos/200/300' },
+      ]);
+    </script>
+  </body>
+</html>
