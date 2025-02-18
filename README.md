@@ -2,6 +2,8 @@
 
 A lightweight JavaScript library for creating responsive image galleries with error handling.
 
+![Purse Library Screenshot](.github/assets/screenshot.png)
+
 ## Features
 
 - Easy-to-use library for creating image galleries
