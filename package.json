@@ -16,12 +16,16 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
+    "jsdom": "^26.0.0",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
-    "vite-plugin-css-injected-by-js": "^3.5.2"
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vitest": "^3.0.5"
   }
 }
