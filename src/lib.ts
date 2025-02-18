@@ -8,14 +8,20 @@ const LUCIDE_ICONS_SVG_DATA_URL =
   'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWltYWdlLW9mZiI+PGxpbmUgeDE9IjIiIHgyPSIyMiIgeTE9IjIiIHkyPSIyMiIvPjxwYXRoIGQ9Ik0xMC40MSAxMC40MWEyIDIgMCAxIDEtMi44My0yLjgzIi8+PGxpbmUgeDE9IjEzLjUiIHgyPSI2IiB5MT0iMTMuNSIgeTI9IjIxIi8+PGxpbmUgeDE9IjE4IiB4Mj0iMjEiIHkxPSIxMiIgeTI9IjE1Ii8+PHBhdGggZD0iTTMuNTkgMy41OUExLjk5IDEuOTkgMCAwIDAgMyA1djE0YTIgMiAwIDAgMCAyIDJoMTRjLjU1IDAgMS4wNTItLjIyIDEuNDEtLjU5Ii8+PHBhdGggZD0iTTIxIDE1VjVhMiAyIDAgMCAwLTItMkg5Ii8+PC9zdmc+';
 
 export function createGallery(options: LibraryOptions) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('purse-gallery-wrapper');
+
+  const gallery = document.createElement('div');
+  gallery.classList.add('purse-gallery');
+
+  wrapper.appendChild(gallery);
+
   const container =
     typeof options.container === 'string'
       ? document.querySelector(options.container)!
       : options.container;
 
-  if (container) {
-    container.classList.add('purse-gallery');
-  }
+  container.appendChild(wrapper);
 
   const displayPhotos = async (urls: { url: string }[]) => {
     const results = await getPhotos(urls);
@@ -42,7 +48,7 @@ export function createGallery(options: LibraryOptions) {
         imgContainer.appendChild(errorContainer);
       }
 
-      container.appendChild(imgContainer);
+      gallery.appendChild(imgContainer);
     });
   };
 
