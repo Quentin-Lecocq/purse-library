@@ -41,10 +41,12 @@ describe('Gallery Library', () => {
 
     await gallery.displayPhotos([{ url: 'error.jpg' }]);
 
-    const errorImage = document.querySelector('.error-image');
-    expect(errorImage).toBeTruthy();
-    expect(errorImage?.classList.contains('error-image')).toBe(true);
-    expect(errorImage?.getAttribute('title')).toBe(
+    const errorContainer = document.querySelector('.error-container');
+    const errorIcon = document.querySelector('.error-icon');
+
+    expect(errorContainer).toBeTruthy();
+    expect(errorIcon).toBeTruthy();
+    expect(errorIcon?.getAttribute('title')).toBe(
       'Error: Failed to load image'
     );
   });
